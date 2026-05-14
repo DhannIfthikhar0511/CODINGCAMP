@@ -1,0 +1,16 @@
+{
+  "name": "expense-budget-visualizer",
+  "version": "1.0.0",
+  "description": "Client-side expense tracker with Local Storage persistence",
+  "scripts": {
+    "test": "jest --runInBand"
+  },
+  "devDependencies": {
+    "fast-check": "3.22.0",
+    "jest": "29.7.0",
+    "jest-environment-jsdom": "29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  }
+}
