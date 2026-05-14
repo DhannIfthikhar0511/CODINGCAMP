@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense &amp; Budget Visualizer</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <header class="top-bar">
+      <h1>💰 Expense &amp; Budget Visualizer</h1>
+      <p class="balance-label">Total Balance: <span id="balance-display">Rp 0</span></p>
+    </header>
+
+    <!-- Middle Row: Form + Chart -->
+    <main class="middle-row">
+      <!-- Left Column: Input Form -->
+      <section class="form-section">
+        <h2>Add Expense</h2>
+        <form id="expense-form" novalidate>
+          <div class="form-group">
+            <label for="input-name">Item Name</label>
+            <input type="text" id="input-name" placeholder="e.g. Lunch" autocomplete="off" />
+          </div>
+          <div class="form-group">
+            <label for="input-amount">Amount</label>
+            <input type="number" id="input-amount" placeholder="e.g. 25000" min="0" step="any" />
+          </div>
+          <div class="form-group">
+            <label for="input-category">Category</label>
+            <select id="input-category">
+              <option value="Food">Food</option>
+              <option value="Transport">Transport</option>
+              <option value="Fun">Fun</option>
+            </select>
+          </div>
+          <button type="submit">Add Expense</button>
+          <p id="form-error"></p>
+        </form>
+      </section>
+
+      <!-- Right Column: Pie Chart -->
+      <section class="chart-section">
+        <h2>Spending by Category</h2>
+        <div class="chart-container">
+          <canvas id="expense-chart"></canvas>
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Section: Transaction History -->
+    <section class="history-section">
+      <h2>Transaction History</h2>
+      <ul id="transaction-list"></ul>
+    </section>
+
+    <!-- Chart.js CDN must come before app.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/app.js" defer></script>
+  </body>
+</html>
